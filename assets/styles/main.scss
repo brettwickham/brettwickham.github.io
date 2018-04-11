@@ -1,0 +1,96 @@
+---
+---
+
+$color-primary: #446cb3;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.site-main {
+	/*font-size: 1.15rem;*/
+	h2 {
+		font-size: 2.5rem;
+		text-align: center;
+	}
+}
+
+.site-footer {
+	padding: 2rem;
+	margin: 2rem;
+	background-color: rgb(248, 248, 250);
+}
+
+.hero-wrapper {
+	/*height: 100%;*/
+	padding: 2rem;
+}
+.hero {
+	color: #fff;
+	position: relative;
+	padding: 10rem 2rem;
+	height: 100%;
+	background-image: url(/assets/images/site/hero-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	&:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		z-index: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		/*background-color: rgba(248, 248, 250, .9);*/
+		background-color: rgba(68, 108, 179, .5);
+	}
+	&:after {
+		content: " ";
+		display: block;
+		position: absolute;
+		z-index: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		background-color: rgba(68, 108, 179, .9);
+	}
+	h1,
+	h2,
+	h3 {
+		font-weight: 400;
+		letter-spacing: .2em;
+	}
+	h1 {
+		@media (min-width: 992px) {
+			font-size: 3.5rem;
+		}
+	}
+	.container-fluid {
+		position: relative;
+		z-index: 1;
+		/*top: 50%;
+		transform: translateY(-50%);*/
+	}
+}
+
+.project-list {
+	.card {
+		margin-bottom: 2rem;
+	}
+	.btn-group {
+	  overflow-x: scroll;
+	  width: 100%;
+	}	
+}

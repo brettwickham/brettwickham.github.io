@@ -1,0 +1,19 @@
+---
+---
+
+{% if site.projects %}
+	{
+		"projects": [
+			{% for project in site.projects %}
+				{
+					"title": {{ project.title | jsonify }},
+					"url": {{ project.url | jsonify }},
+					"project_link": {{ project.project_link | jsonify }},
+					"project_image": "/assets/images/projects/{{ project.project_image }}",
+					"content": {{ project.content | jsonify }},
+					"tags": {{ project.tags | jsonify }}
+				}{% if forloop.last == false %},{% endif %}
+			{% endfor %}
+		] 
+	}
+{% endif %}
