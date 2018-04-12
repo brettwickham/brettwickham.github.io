@@ -46,13 +46,13 @@ class ProjectTagFilter extends Component {
     let lastGroup = null;
 
     const filterTagList = filterTags.map(tag => {
-      if (tag.title === filterTagActive) {
+      if (tag === filterTagActive) {
         return (
-          <button className="btn btn-sm btn-light active" onClick={this.handleFilterTagClick}>{tag.title}</button>
+          <button className="btn btn-sm btn-light active" onClick={this.handleFilterTagClick}>{tag}</button>
         )
       } else {
         return (
-          <button className="btn btn-sm btn-light" onClick={this.handleFilterTagClick}>{tag.title}</button>
+          <button className="btn btn-sm btn-light" onClick={this.handleFilterTagClick}>{tag}</button>
         )
       }
     });
@@ -92,21 +92,7 @@ class ProjectList extends Component {
   render() {
   	const projects = this.state.projects;
     const filterTagActive = this.state.filterTagActive;
-    const filterTags = [
-      { title: "All", group: "Reset" },
-      { title: "Adobe Experience Manager", group: "Platforms" },
-      { title: "Jekyll", group: "Platforms" },
-      { title: "WordPress", group: "Platforms" },
-      { title: "Angular", group: "Frameworks" },
-      { title: "Bootstrap", group: "Frameworks" },
-      { title: "Handlebars", group: "Frameworks" },
-      { title: "jQuery", group: "Frameworks" },
-      { title: "Turbolinks", group: "Frameworks" },
-      { title: "Grunt", group: "Precompile" },
-      { title: "Gulp", group: "Precompile" },
-      { title: "Less", group: "Precompile" },
-      { title: "Sass", group: "Precompile" }
-    ];
+    const filterTags = this.props.filterTags;
 
   	const rows = projects.map(project => {
       if (filterTagActive === "All") {
@@ -126,7 +112,9 @@ class ProjectList extends Component {
           filterTags={filterTags}
           filterTagActive={filterTagActive}
           onFilterTagClick={this.handleFilterTagClick} />
-        <div className="row">{rows}</div>
+        <div className="row">
+          {rows}
+        </div>
       </div>
     )
   }
