@@ -18,7 +18,6 @@ const heroHandleScroll = ($hero) => {
 
     if (scrollY && scrollY <= position) {
       percent = ((position - scrollY) / position * 50 - 100);
-      console.log(percent);
       $heroLeft.style.setProperty("transform", "translateX(" + percent + "%)");
     }
     else {

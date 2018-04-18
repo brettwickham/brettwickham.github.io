@@ -6,6 +6,7 @@ import heroHandleScroll from "./components/hero.jsx";
 window.addEventListener("load", () => {
   const $hero = document.getElementById("hero");
 	const $projectList = document.getElementById("project-list");
+  const $smoothScroll = document.querySelector(".smooth-scroll");
 	const filterTags = [
     "All",
     "Adobe Experience Manager",
@@ -27,4 +28,5 @@ window.addEventListener("load", () => {
 
   // Hero scroll animation
   heroHandleScroll($hero);
+
 });

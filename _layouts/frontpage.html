@@ -8,6 +8,7 @@ layout: default
 		<div class="container-fluid text-center">
 			<h1 class="mb-3">{{ site.title }}</h1>
 			<h3 class="text-uppercase mb-4">{{ site.description }}</h3>
+			<i class="icon icon--arrow-hint animated animated--infinite pulse"></i>
 		</div>
 	</div>
 </div>
@@ -23,7 +24,18 @@ layout: default
 		<!-- Container for React app -->
 		<div id="project-list"></div>
 
-		<!-- TODO: add about section -->
+		<!-- About section -->
+		{% for page in site.pages %}
+			{% if page.title == "About" %}
+
+				{% if page.image %}
+					<img class="image image--circle image--center mb-2" src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+				{% endif %}
+
+				{{ page.content }}
+
+			{% endif %}
+		{% endfor %}
 
 	</div>
 </main>

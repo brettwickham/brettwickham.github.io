@@ -25,6 +25,79 @@ a {
 	}
 }
 
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated--infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+.icon {
+	display: inline-block;
+	background: url({{ "/assets/images/site/icons.png" | relative_url }}) no-repeat;
+	&--arrow-hint {
+		background-position: 0 0;
+		background-size: 24px 16px;
+		width: 24px;
+		height: 16px;
+	}
+}
+
+.image {
+	display: inline-block;
+	&--circle {
+		border-radius: 50%;
+	}
+	&--center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 .site-main {
 	h2 {
 		font-size: 2.5rem;
@@ -48,7 +121,7 @@ a {
 	position: relative;
 	padding: 10rem 2rem;
 	height: 100%;
-	background-image: url(/assets/images/site/hero-bg.jpg);
+	background: url({{ "/assets/images/site/hero-bg.jpg" | relative_url }}) no-repeat;
 	background-size: cover;
 	background-position: center;
 	.hero-left,
@@ -68,16 +141,18 @@ a {
 	}
 	.hero-left {
 		background-color: rgba(68, 108, 179, .75);
-		-webkit-transition: transform 1000ms ease-out;
+		-webkit-transition: -webkit-transform 1000ms ease-out;
 		transition: transform 1000ms ease-out;
 	}
 	&.in {
 		.hero-left {
+			-webkit-transform: translateX(-50%);
 			transform: translateX(-50%);
 		}
 	}
 	&.scrolling {
 		.hero-left {
+			-webkit-transition: -webkit-transform 100ms ease-out;
 			transition: transform 100ms ease-out;
 		}
 	}
