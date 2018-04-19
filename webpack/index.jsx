@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import ProjectList from "./components/Projects.jsx";
 import heroHandleScroll from "./components/hero.jsx";
+import handleSmoothScroll from "./components/smooth-scroll.jsx";
 
 window.addEventListener("load", () => {
   const $hero = document.getElementById("hero");
@@ -28,5 +29,8 @@ window.addEventListener("load", () => {
 
   // Hero scroll animation
   heroHandleScroll($hero);
+
+  // Smooth scroll
+  handleSmoothScroll($smoothScroll);
 
 });
