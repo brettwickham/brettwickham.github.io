@@ -24,20 +24,22 @@ layout: default
 		</div>
 
 		<!-- Container for React app -->
-		<div id="project-list"></div>
+		<section id="project-list" class="projects"></section>
 
 		<!-- About section -->
-		{% for page in site.pages %}
-			{% if page.title == "About" %}
+		<section class="about">
+			{% for page in site.pages %}
+				{% if page.title == "About" %}
 
-				{% if page.image %}
-					<img class="image image--circle image--center mb-2" src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+					{% if page.image %}
+						<img class="image image--circle image--center mb-2" src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+					{% endif %}
+
+					{{ page.content }}
+
 				{% endif %}
-
-				{{ page.content }}
-
-			{% endif %}
-		{% endfor %}
+			{% endfor %}
+		</section>
 
 	</div>
 </main>
