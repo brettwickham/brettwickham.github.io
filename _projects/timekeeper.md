@@ -2,7 +2,7 @@
 title: "Timekeeper"
 tags:
 - AngularJS
-- ES6 JavaScript
+- Babel
 - Gulp
 - Sass
 project_link: "https://github.com/brettwickham/timekeeper"

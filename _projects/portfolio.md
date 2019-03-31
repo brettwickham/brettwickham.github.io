@@ -1,10 +1,11 @@
 ---
 title: "Portfolio"
 tags:
-- ES6 JavaScript
 - Jekyll
 - React
+- Babel
 - Sass
+- Bootstrap
 project_link: "https://github.com/brettwickham/brettwickham.github.io"
 project_image: portfolio-desktop.jpg # upload to /assets/images/projects/
 ---
